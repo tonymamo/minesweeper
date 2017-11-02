@@ -1,0 +1,17 @@
+@import '../../stylesheets/variables.scss';
+
+.board {
+    margin: ($spacer * 2) 0;
+    border: $border-width solid $base-border-color;
+    padding: $spacer;
+}
+
+.board__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.board__grid {
+    border: $border-width solid $base-border-color;
+    margin: $spacer 0;
+}
