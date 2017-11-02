@@ -1,0 +1,33 @@
+@import '../stylesheets/variables.scss';
+
+// BODY DEFAULTS 
+body {
+    font-family: $font-family-sans-serif;
+}
+
+// HEADER
+.header__logo {
+    height: $spacer * 3;
+    margin: $spacer * 2 auto;
+}
+
+.header {
+    padding: $spacer * 2;
+    color: $text-light;
+    background: linear-gradient(64deg,#1fbafe,#074774);
+    background-size: 400% 400%;
+    animation: moving-gradient 6s ease infinite;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+@keyframes moving-gradient {
+    0%,
+    100% {
+        background-position: 0 18%;
+    }
+
+    50% {
+        background-position: 100% 83%;
+    }
+}
