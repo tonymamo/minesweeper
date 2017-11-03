@@ -4,16 +4,18 @@ import './Board.css';
 class Board extends Component {
     
     restartGame() {
-        console.log('restarted');
+        
     }
-    
+
     render() {
         return (
             <div className="board">
                 <div className="board__header">
-                    <div className="mine-count">0</div>
-                    <div className="restart"><button onClick={this.restartGame.bind(this)}>Restart</button></div>
-                    <div className="clock">0</div>
+                    <div><span className="pill">0</span> <span className="board__subheading">Mines Remaining</span></div>
+                    <div><span className="board__subheading">Time Elapsed</span> <span className="pill">0</span></div>
+                </div>
+                <div className="restart">
+                    <button onClick={this.restartGame.bind(this)}>Restart</button>
                 </div>
                 <div className="board__grid">
                     

@@ -8,8 +8,10 @@ class App extends Component {
         return (
             <div className="app">
                 <header className="header" role="banner">
-                    <img src={logo} className="header__logo" alt="WayUp logo"/>
-                    <h1>Minesweeper</h1>
+                    <div className="header__wrapper">
+                        <img src={logo} className="header__logo" alt="WayUp logo"/>
+                        <h1 className="header__text">Minesweeper</h1>
+                    </div>
                 </header>
                 <main role="main">
                     <div className="container">

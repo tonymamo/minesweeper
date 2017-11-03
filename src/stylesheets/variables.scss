@@ -59,7 +59,7 @@
 // Grayscale
 $black:                       #000000 !default;
 $gray-dark:                   #3f5263 !default;
-$gray:                        #55595c !default;
+$gray:                        #7b7b7b !default;
 $gray-light:                  #95A5A6 !default;
 $gray-lighter:                #dedede !default;
 $gray-lightest:               #f4f4f4 !default;
@@ -131,7 +131,7 @@ $border-width:                .0625rem !default;
 //
 
 // Settings for the `<body>` element.
-$body-bg:                     $white !default;
+$body-bg:                     $gray-lightest !default;
 $body-color:                  $gray-light !default;
 $base-border-color:           $gray-lighter;
 

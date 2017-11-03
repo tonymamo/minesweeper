@@ -2,7 +2,8 @@
 
 .board {
     margin: ($spacer * 2) 0;
-    border: $border-width solid $base-border-color;
+    background-color: $white;
+    box-shadow: 0px 10px 20px -1px #e2e2e2;
     padding: $spacer;
 }
 
@@ -12,6 +13,28 @@
 }
 
 .board__grid {
-    border: $border-width solid $base-border-color;
     margin: $spacer 0;
+}
+
+.board__subheading {
+    color: #229AD6;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: $font-size-sm;
+    letter-spacing: 2.4px;
+}
+
+.restart {
+    text-align: center;
+}
+
+.pill {
+    background: $gray-lightest;
+    font-size: 13px;
+    font-weight: 700;
+    padding: $half-spacer $spacer;
+    margin: 3px;
+    border: 1px solid $gray-lighter;
+    border-radius: $spacer * 2;
+    color: $gray;
 }
