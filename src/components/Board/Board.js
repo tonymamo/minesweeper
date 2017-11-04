@@ -32,13 +32,10 @@ class Board extends Component {
     
     gameCompleted() {
         this.stopTimer();
-        alert('You won!');
-        
     }
     
     gameEnded() {
         this.stopTimer();
-        alert('You lost.');
     }
     
     componentWillUnmount() {
@@ -98,32 +95,51 @@ class Board extends Component {
                     <div className="counter"><span className="pill">{this.state.secondsElapsed}</span> <span className="board__subheading">Time Elapsed</span></div>
                 </div>
                 <p className="align--center"><button className="button" onClick={this.restartGame.bind(this)}>Restart</button></p>
-                <div onContextMenu={this.handleContextMenu}>
-                {
-                    this.props.board &&
-                    this.props.board.map((row, index) => {
-                        return (
-                            <div key={index} className="row">
-                                {row.map((cell, index) => {
-                                    return (
-                                        <Cell
-                                            key={index}
-                                            onFlag={e => this.handleRightClick(e, cell)}
-                                            onClick={e => this.handleLeftClick(e, cell)}
-                                            onBlur={this.props.onMouseUp}
-                                            onFocus={this.props.onMouseDown}
-                                            opened={cell.get('opened')}
-                                            flagged={cell.get('flagged')}
-                                            hasMine={cell.get('hasMine')}
-                                            adjacentCellMineCount={cell.get('adjacentCellMineCount')}
-                                            gameOver={this.props.gameOver}
-                                        />
-                                    );
-                                })}
+                <div className="board__grid" onContextMenu={this.handleContextMenu}>
+                    {
+                        this.props.board &&
+                        this.props.board.map((row, index) => {
+                            return (
+                                <div key={index} className="row">
+                                    {row.map((cell, index) => {
+                                        return (
+                                            <Cell
+                                                key={index}
+                                                onFlag={e => this.handleRightClick(e, cell)}
+                                                onClick={e => this.handleLeftClick(e, cell)}
+                                                onBlur={this.props.onMouseUp}
+                                                onFocus={this.props.onMouseDown}
+                                                opened={cell.get('opened')}
+                                                flagged={cell.get('flagged')}
+                                                hasMine={cell.get('hasMine')}
+                                                adjacentCellMineCount={cell.get('adjacentCellMineCount')}
+                                                gameOver={this.props.gameOver}
+                                            />
+                                        );
+                                    })}
+                                </div>
+                            );
+                        })
+                    }
+                    {
+                        this.props.completed && this.props.gameOver &&
+                        <div className="alert">
+                            <div className="alert__inner">
+                                <h2>You Won!</h2>
+                                <p><button className="button" onClick={this.restartGame.bind(this)}>Play Again</button></p>
                             </div>
-                        );
-                    })
-                }
+                        </div>
+                    }
+                    
+                    {
+                        !this.props.completed && this.props.gameOver &&
+                        <div className="alert">
+                            <div className="alert__inner">
+                                <h2>Game over.</h2>
+                                <p><button className="button" onClick={this.restartGame.bind(this)}>Play Again</button></p>
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
         );

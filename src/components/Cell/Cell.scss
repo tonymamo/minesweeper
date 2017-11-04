@@ -33,9 +33,35 @@
     width: 75%;
 }
 
+.cell--mine .cell__image {
+    animation: bounceIn .5s linear forwards;
+}
+
 .cell--mine,
 .cell--mine:hover {
     background-color: #dd5544;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translate3d(0,0,0);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: scale(1.1);
+    }
+
+    80% {
+        opacity: 1;
+        transform: scale(0.89);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translate3d(0,0,0);
+    }
 }
 
 @media all and (min-width: 30em) {

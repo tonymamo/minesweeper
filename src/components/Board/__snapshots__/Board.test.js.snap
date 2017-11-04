@@ -49,6 +49,7 @@ exports[`renders correctly 1`] = `
     </button>
   </p>
   <div
+    className="board__grid"
     onContextMenu={[Function]}
   />
 </div>
