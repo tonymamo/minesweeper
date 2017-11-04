@@ -8,7 +8,7 @@ class App extends Component {
     componentDidMount() {
         this.props.actions.newGame();
     }
-    
+
     render() {
         return (
             <div className="app">

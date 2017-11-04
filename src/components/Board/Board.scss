@@ -25,7 +25,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    
+
     z-index: 1;
     display: flex;
     justify-content: center;
@@ -60,7 +60,7 @@
     padding: $half-spacer $spacer;
     font-size: 12px;
     border: none;
-    
+
     &:hover,
     &:focus {
         background-color: #6FC2E6;
@@ -94,7 +94,7 @@
         display: flex;
         justify-content: space-between;
     }
-    
+
     .counter:nth-child(2) .pill {
         order: 2;
     }

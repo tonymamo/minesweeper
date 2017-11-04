@@ -35,7 +35,7 @@ export function openCell(cell) {
         if (cell.get('opened')) {
             return;
         }
-        
+
         // set the mines up after the first click so you can never lose on the first click
         if (getState().get('totalOpened') === 0) {
             dispatch({

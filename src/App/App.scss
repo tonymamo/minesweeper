@@ -1,6 +1,6 @@
 @import '../stylesheets/variables.scss';
 
-// BODY DEFAULTS 
+// BODY DEFAULTS
 body {
     font-family: "Open Sans", "Helvetica Neue", helvetica, tahoma, arial, verdana, sans-serif;
     background-color: $gray-lightest;
@@ -34,7 +34,7 @@ body {
     margin: $half-spacer 0;
     text-transform: uppercase;
     letter-spacing: 2.4px;
-    
+
 }
 
 @keyframes moving-gradient {

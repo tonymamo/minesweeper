@@ -15,8 +15,8 @@ class BoardContainer extends Component {
 
 function mapStateToProps(state) {
     return {
-        board:          state.get('board'), 
-        totalOpened:    state.get('totalOpened'), 
+        board:          state.get('board'),
+        totalOpened:    state.get('totalOpened'),
         minesLeft:      state.get('minesLeft'),
         completed:      state.get('completed'),
         gameOver:       state.get('gameOver')

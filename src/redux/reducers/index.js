@@ -23,12 +23,12 @@ export default(state = initalState, action) => {
     switch (action.type) {
         case types.START_GAME:
             return state.mergeDeep({
-                gameOver: false, 
-                minesLeft: state.get('mineCount'), 
+                gameOver: false,
+                minesLeft: state.get('mineCount'),
                 completed: false, totalOpened: 0}
             ).set('board', generateBoard({
-                rows: state.get('rows'), 
-                columns: state.get('columns'), 
+                rows: state.get('rows'),
+                columns: state.get('columns'),
                 mineCount: state.get('mineCount')}
             ));
 

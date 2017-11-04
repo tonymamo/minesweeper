@@ -5,7 +5,3 @@ export const ADD_FLAG = 'ADD_FLAG';
 export const REMOVE_FLAG = 'REMOVE_FLAG';
 export const WIN_GAME = 'WIN_GAME';
 export const END_GAME = 'END_GAME';
-
-
-
-

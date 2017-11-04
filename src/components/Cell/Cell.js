@@ -19,17 +19,17 @@ class Cell extends Component {
         return (
             <div className={className} onClick={this.props.onClick} onContextMenu={this.props.onFlag}>
                 {
-                    !opened && flagged && !gameOver && 
+                    !opened && flagged && !gameOver &&
                     <img src={flag} alt="flag" className="cell__image"/>
                 }
-            
+
                 {
-                    opened && !hasMine && adjacentCellMineCount > 0 && 
+                    opened && !hasMine && adjacentCellMineCount > 0 &&
                     <span>{adjacentCellMineCount}</span>
                 }
-                
+
                 {
-                    ((hasMine && opened) || (hasMine && gameOver)) && 
+                    ((hasMine && opened) || (hasMine && gameOver)) &&
                     <img src={bomb} alt="bomb" className="cell__image"/>
                 }
             </div>

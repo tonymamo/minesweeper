@@ -7,7 +7,7 @@ import './Board.css';
 class Board extends Component {
     constructor(props) {
         super(props);
-        
+
         this.state = {
             secondsElapsed: 0
         };
@@ -15,33 +15,33 @@ class Board extends Component {
         this.handleLeftClick = this.handleLeftClick.bind(this);
         this.handleRightClick = this.handleRightClick.bind(this);
     }
-    
+
     componentWillReceiveProps(nextProps) {
         if ( this.props.totalOpened === 0 && nextProps.totalOpened > 0 ) {
             this.startTimer();
         }
-        
+
         if ( !this.props.completed && nextProps.completed && nextProps.gameOver ) {
             this.gameCompleted();
         }
-        
+
         if ( !this.props.gameOver && nextProps.gameOver && !nextProps.completed ) {
             this.gameEnded();
         }
     }
-    
+
     gameCompleted() {
         this.stopTimer();
     }
-    
+
     gameEnded() {
         this.stopTimer();
     }
-    
+
     componentWillUnmount() {
         clearInterval(this.intervalId);
     }
-    
+
     startTimer() {
         this.intervalId = setInterval(() => {
             this.setState({
@@ -49,37 +49,37 @@ class Board extends Component {
             });
         }, 1000);
     }
-    
+
     stopTimer() {
         clearInterval(this.intervalId);
-        
+
         this.setState({
             secondsElapsed: this.state.secondsElapsed
         });
     }
-    
+
     restartGame() {
         this.props.appActions.newGame();
-        
+
         clearInterval(this.intervalId);
-        
+
         this.setState({
             secondsElapsed: 0
         });
     }
-    
+
     handleContextMenu(event) {
         event.preventDefault();
     }
 
     handleRightClick(event, cell) {
         event.preventDefault();
-        
+
         if ( (this.props.minesLeft === 0 && cell.flagged) || this.props.minesLeft > 0 ) {
-            this.props.boardActions.flagCell(cell);        
+            this.props.boardActions.flagCell(cell);
         }
     }
-    
+
     handleLeftClick(_event, cell) {
         // user must remove flag before being able to open
         if ( !cell.flagged && !this.props.gameOver) {
@@ -130,7 +130,7 @@ class Board extends Component {
                             </div>
                         </div>
                     }
-                    
+
                     {
                         !this.props.completed && this.props.gameOver &&
                         <div className="alert">
