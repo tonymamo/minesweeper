@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="board"
+>
+  <div
+    className="board__header"
+  >
+    <div
+      className="counter"
+    >
+      <span
+        className="pill"
+      >
+        10
+      </span>
+       
+      <span
+        className="board__subheading"
+      >
+        Mines Remaining
+      </span>
+    </div>
+    <div
+      className="counter"
+    >
+      <span
+        className="pill"
+      >
+        0
+      </span>
+       
+      <span
+        className="board__subheading"
+      >
+        Time Elapsed
+      </span>
+    </div>
+  </div>
+  <p
+    className="align--center"
+  >
+    <button
+      className="button"
+      onClick={[Function]}
+    >
+      Restart
+    </button>
+  </p>
+  <div
+    onContextMenu={[Function]}
+  />
+</div>
+`;
