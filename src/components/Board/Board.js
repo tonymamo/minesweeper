@@ -10,7 +10,7 @@ class Board extends Component {
         
         this.state = {
             secondsElapsed: 0
-        }
+        };
 
         this.handleLeftClick = this.handleLeftClick.bind(this);
         this.handleRightClick = this.handleRightClick.bind(this);
@@ -65,7 +65,7 @@ class Board extends Component {
         
         this.setState({
             secondsElapsed: 0
-        })
+        });
     }
     
     handleContextMenu(event) {
