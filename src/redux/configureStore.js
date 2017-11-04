@@ -2,8 +2,8 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { apiMiddleware } from 'redux-api-middleware';
 
-import rootReducer from './redux/index';
-import logger from './redux/logger';
+import rootReducer from './reducers/index';
+import logger from './logger';
 
 let middleware = [
     thunk,
@@ -20,8 +20,8 @@ export default function configureStore(initialState) {
     const store = createStoreWithMiddleware(rootReducer, initialState);
 
     if ( module.hot ) {
-        module.hot.accept('./redux', () => {
-            const nextReducer = require('./redux').default;
+        module.hot.accept('./reducers', () => {
+            const nextReducer = require('./reducers').default;
             store.replaceReducer(nextReducer);
         });
     }

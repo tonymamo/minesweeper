@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import './stylesheets/styles.css';
 
 import AppContainer from './App/AppContainer';
-import configureStore from '../src/configureStore.js';
+import configureStore from '../src/redux/configureStore';
 
 import registerServiceWorker from './registerServiceWorker';
 
