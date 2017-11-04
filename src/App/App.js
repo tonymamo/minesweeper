@@ -1,9 +1,14 @@
 import React, {Component} from 'react';
+
 import logo from '../wayup-white.svg';
 import './App.css';
-import Board from '../components/Board/Board';
+import BoardContainer from '../components/Board/BoardContainer';
 
 class App extends Component {
+    componentDidMount() {
+        this.props.actions.newGame();
+    }
+    
     render() {
         return (
             <div className="app">
@@ -15,7 +20,7 @@ class App extends Component {
                 </header>
                 <main role="main">
                     <div className="container">
-                        <Board />
+                        <BoardContainer />
                     </div>
                 </main>
             </div>
