@@ -2,13 +2,14 @@
 
 // BODY DEFAULTS 
 body {
-    font-family: $font-family-sans-serif;
+    font-family: "Open Sans", "Helvetica Neue", helvetica, tahoma, arial, verdana, sans-serif;
+    background-color: $gray-lightest;
 }
 
 // HEADER
 .header {
     padding: $spacer;
-    color: $text-light;
+    color: white;
     background: linear-gradient(64deg,#1fbafe,#074774);
     background-size: 400% 400%;
     animation: moving-gradient 6s ease infinite;
@@ -19,16 +20,21 @@ body {
     padding: 0 $spacer;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .header__logo {
-    height: $spacer * 3;
+    height: $spacer * 2;
 }
 
-.header__text ,
-.header__logo {
-    display: inline-block;
+.header__text {
+    font-size: $spacer;
+    margin: $half-spacer 0;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+    
 }
 
 @keyframes moving-gradient {
@@ -39,5 +45,11 @@ body {
 
     50% {
         background-position: 100% 83%;
+    }
+}
+
+@media all and (min-width: 34em) {
+    .header__logo {
+        height: $spacer * 3;
     }
 }

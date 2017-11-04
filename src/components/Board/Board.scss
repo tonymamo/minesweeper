@@ -2,39 +2,77 @@
 
 .board {
     margin: ($spacer * 2) 0;
-    background-color: $white;
+    background-color: #ffffff;
     box-shadow: 0px 10px 20px -1px #e2e2e2;
     padding: $spacer;
-}
-
-.board__header {
-    display: flex;
-    justify-content: space-between;
-}
-
-.board__grid {
-    margin: $spacer 0;
 }
 
 .board__subheading {
     color: #229AD6;
     font-weight: 700;
     text-transform: uppercase;
-    font-size: $font-size-sm;
+    font-size: 12px;
     letter-spacing: 2.4px;
 }
 
-.restart {
+.align--center {
     text-align: center;
+}
+
+.button {
+    color: #ffffff;
+    background-color: $brand-primary;
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+    border-radius: $spacer * 2;
+    padding: $half-spacer $spacer;
+    font-size: 12px;
+    border: none;
+    
+    &:hover,
+    &:focus {
+        background-color: #6FC2E6;
+        outline: none;
+    }
+}
+
+.counter {
+    margin-bottom: $half-spacer;
+    display: flex;
+    align-items: center;
 }
 
 .pill {
     background: $gray-lightest;
     font-size: 13px;
     font-weight: 700;
-    padding: $half-spacer $spacer;
-    margin: 3px;
-    border: 1px solid $gray-lighter;
-    border-radius: $spacer * 2;
+    padding: ($half-spacer / 4) $half-spacer;
+    margin: 0 $half-spacer;
+    border: 1px solid #dedede;
+    border-radius: $spacer;
     color: $gray;
+}
+
+.row {
+    display: flex;
+}
+
+@media all and (min-width: 30em) {
+    .board__header {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .counter:nth-child(2) .pill {
+        order: 2;
+    }
 }
